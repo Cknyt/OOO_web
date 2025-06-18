@@ -1,0 +1,782 @@
+/* --- VARIABLES Y ESTILOS GLOBALES --- */
+:root {
+    --primary-red: #D90429;
+    --dark-text: #212529;
+    --light-text: #6c757d;
+    --background-grey: #f8f9fa;
+    --white: #ffffff;
+    --border-color: #dee2e6;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    background-color: var(--background-grey);
+    color: var(--dark-text);
+}
+
+/* --- ESTILOS DE LA BARRA DE NAVEGACIÓN (Sin cambios) --- */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary-red);
+}
+
+.main-nav a {
+    margin: 0 0.5rem; /* Reducimos un poco el margen horizontal */
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    padding: 0.75rem 1.5rem; /* Añadimos relleno para darles cuerpo */
+    border-radius: 30px; /* Esto crea la forma de píldora */
+    border: 2px solid transparent; /* Un borde transparente para mantener el tamaño */
+    transition: all 0.3s ease; /* Transición suave para todos los efectos */
+}
+
+.main-nav a:hover {
+    background-color: #f0f0f0; /* Un fondo gris claro al pasar el ratón */
+    border-color: #e0e0e0;
+    color: var(--dark-text); /* Mantenemos el color del texto */
+}
+
+/* ESTA ES LA NUEVA REGLA CLAVE PARA LA PÁGINA ACTIVA */
+.main-nav a.active {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border-color: var(--primary-red);
+    font-weight: bold;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+}
+
+.user-points {
+    margin-right: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-red);
+}
+
+.user-profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    z-index: 10;
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.8rem 1rem;
+    text-decoration: none;
+    color: var(--dark-text);
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+/* --- NUEVOS ESTILOS PARA LA PÁGINA DE INICIO --- */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido */
+    padding: 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--light-text);
+}
+
+/* El grid que contiene las tarjetas */
+.home-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+/* Estilo general de cada tarjeta */
+.card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.card h2 {
+    font-size: 1.4rem;
+    color: var(--primary-red);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.card h2 .fa-solid {
+    margin-right: 0.75rem;
+}
+
+/* Estilos específicos de cada lista dentro de las tarjetas */
+.event-list, .course-list, .community-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1; /* Hace que la lista ocupe el espacio disponible */
+}
+
+.event-list li, .course-list li, .community-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.95rem;
+}
+.community-list li .fa-heart {
+    color: var(--primary-red);
+}
+
+.event-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.event-info .event-title {
+    display: block;
+    font-weight: 500;
+}
+.event-info .event-date {
+    font-size: 0.85rem;
+    color: var(--light-text);
+}
+.btn-event {
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    transition: opacity 0.3s;
+}
+.btn-event:hover {
+    opacity: 0.85;
+}
+
+/* Barra de progreso para los cursos */
+.progress-bar {
+    width: 100%;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    height: 8px;
+    margin-top: 0.5rem;
+}
+.progress {
+    background-color: var(--primary-red);
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* Pie de la tarjeta */
+.card-footer {
+    margin-top: 1.5rem;
+    text-align: right;
+}
+
+.see-more {
+    color: var(--primary-red);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+
+/* --- NUEVOS ESTILOS PARA LA PÁGINA 'MI ESPACIO' --- */
+/* --- AÑADIR ESTO AL FINAL DE TU ARCHIVO style.css --- */
+
+.dashboard-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.points-card {
+    flex: 1; /* Ocupa el espacio disponible */
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.points-card .points-value {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-red);
+}
+
+.points-card .points-label {
+    font-size: 1rem;
+    color: var(--light-text);
+}
+
+/* Tabla de actividad */
+.activity-table {
+    width: 100%;
+    border-collapse: collapse; /* Une los bordes de las celdas */
+    margin-top: 1rem;
+}
+
+.activity-table th, .activity-table td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.activity-table th {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--light-text);
+    text-transform: uppercase;
+}
+
+.points-positive {
+    color: #28a745; /* Verde para puntos ganados */
+    font-weight: bold;
+}
+
+.points-negative {
+    color: var(--primary-red); /* Rojo para puntos gastados */
+    font-weight: bold;
+}
+
+/* Botones de acción */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap; /* Para que se adapte en pantallas pequeñas */
+}
+
+.btn-action {
+    background-color: var(--primary-red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 500;
+    text-align: center;
+    flex: 1;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(217, 4, 41, 0.2);
+}
+
+
+/* --- NUEVOS ESTILOS PARA LA PÁGINA 'AGENDA' --- */
+/* --- AÑADIR ESTO AL FINAL DE TU ARCHIVO style.css --- */
+
+.page-header {
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    color: var(--dark-text);
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    color: var(--light-text);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.event-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.event-card {
+    display: flex;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+    overflow: hidden; /* Para que el radio de borde funcione con los hijos */
+    transition: box-shadow 0.3s;
+}
+
+.event-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.event-date-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.event-date-box .day {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.event-date-box .month {
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.event-details {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.event-category {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.75rem;
+}
+
+.category-webinar { background-color: #007bff; }
+.category-taller { background-color: #28a745; }
+
+.event-details h2 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: var(--dark-text);
+}
+
+.event-meta {
+    color: var(--light-text);
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+}
+
+.event-description {
+    margin: 0;
+    color: #495057;
+}
+
+.event-action {
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    border-left: 1px solid var(--border-color);
+}
+
+/* Estilo para eventos pasados */
+.event-past {
+    opacity: 0.7;
+}
+.event-past .event-date-box {
+    background-color: var(--light-text);
+}
+.btn-action[disabled] {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+.btn-action[disabled]:hover {
+    box-shadow: none;
+    transform: none;
+}
+
+
+
+/* --- NUEVOS ESTILOS PARA LA PÁGINA 'COMUNIDAD' --- */
+/* --- AÑADIR ESTO AL FINAL DE TU ARCHIVO style.css --- */
+
+.tab-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 2px solid var(--border-color);
+    margin-bottom: 2rem;
+}
+
+.tab-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--light-text);
+    position: relative;
+    top: 2px;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-btn.active {
+    color: var(--primary-red);
+    border-bottom-color: var(--primary-red);
+}
+
+.tab-panel {
+    display: none; /* Oculto por defecto */
+}
+
+.tab-panel.active {
+    display: block; /* Visible cuando está activo */
+}
+
+/* Grid para las tarjetas */
+.recommendation-grid, .achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Tarjetas de Recomendación */
+.recommendation-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-left: 5px solid var(--primary-red);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.rec-icon {
+    font-size: 2rem;
+    color: var(--primary-red);
+    margin-bottom: 1rem;
+}
+.recommendation-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+}
+.rec-author {
+    margin: 0.25rem 0 1rem 0;
+    font-style: italic;
+    color: var(--light-text);
+}
+.rec-comment {
+    flex-grow: 1;
+    font-size: 0.95rem;
+}
+.rec-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: var(--light-text);
+}
+.rec-likes {
+    font-weight: bold;
+    color: var(--primary-red);
+}
+.rec-likes .fa-heart {
+    margin-right: 0.25rem;
+}
+
+/* Tarjetas de Logros */
+.achievement-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+    padding: 1.5rem;
+}
+.achievement-image {
+    width: 100%;
+    height: 150px;
+    background-color: var(--background-grey);
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    color: var(--light-text);
+    margin-bottom: 1rem;
+}
+.achievement-card h3 {
+    margin: 0;
+}
+.ach-user {
+    margin: 0.25rem 0 1rem 0;
+    font-weight: 500;
+    color: var(--primary-red);
+}
+
+/* --- NUEVOS ESTILOS PARA LA PÁGINA 'TIENDA' --- */
+/* --- AÑADIR ESTO AL FINAL DE TU ARCHIVO style.css --- */
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: center;
+    overflow: hidden; /* Para que el botón no se salga del radio */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    background-color: var(--background-grey);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-image .fa-solid {
+    font-size: 5rem;
+    color: #ced4da;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin: 1.5rem 1rem 0.5rem 1rem;
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-red);
+    margin: 0.5rem 1rem 1.5rem 1rem;
+    flex-grow: 1; /* Empuja el botón hacia abajo */
+}
+
+.btn-redeem {
+    display: block;
+    background-color: var(--primary-red);
+    color: var(--white);
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+.btn-redeem:not([disabled]):hover {
+    background-color: #b80022; /* Un rojo un poco más oscuro */
+}
+
+.btn-redeem[disabled] {
+    background-color: #adb5bd;
+    cursor: not-allowed;
+}
+
+/* --- MINI CALENDARIO EN LA PÁGINA DE INICIO --- */
+/* --- AÑADIR ESTO AL FINAL DE TU ARCHIVO style.css --- */
+
+.mini-calendar {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+
+.calendar-header {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+}
+
+.calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Asegura que las columnas tengan el mismo ancho */
+}
+
+.calendar-table th {
+    font-weight: 500;
+    color: var(--light-text);
+    font-size: 0.85rem;
+    padding-bottom: 0.5rem;
+}
+
+.calendar-table td {
+    text-align: center;
+    padding: 0.5rem 0;
+    font-size: 0.9rem;
+    position: relative;
+    height: 38px; /* Damos una altura fija a las celdas */
+}
+
+/* Días de otro mes */
+.calendar-table .other-month {
+    color: #ced4da;
+}
+
+/* Día de hoy */
+.calendar-table .today {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border-radius: 50%; /* Círculo perfecto */
+    font-weight: bold;
+}
+
+/* Día con evento */
+.calendar-table .has-event {
+    font-weight: bold;
+    color: var(--primary-red);
+}
+
+/* Punto indicador de evento */
+.calendar-table .has-event::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 5px;
+    height: 5px;
+    background-color: var(--primary-red);
+    border-radius: 50%;
+}
+
+/* --- ESTILOS PARA LA PÁGINA DE CURSOS --- */
+/* --- AÑADIR ESTO AL FINAL DE TU ARCHIVO style.css --- */
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.course-card {
+    background-color: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.course-card-image {
+    width: 100%;
+    height: 150px;
+    background-color: var(--primary-red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.course-card-image .fa-solid {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.course-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Para que todas las tarjetas tengan la misma altura */
+}
+
+.course-card-category {
+    display: inline-block;
+    align-self: flex-start; /* Alinea la etiqueta a la izquierda */
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--light-text);
+    margin-bottom: 1rem;
+}
+
+.course-card-content h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.4rem;
+}
+
+.course-card-content p {
+    margin: 0 0 1.5rem 0;
+    color: var(--light-text);
+    flex-grow: 1; /* Empuja la barra de progreso y el botón hacia abajo */
+}
+
+.course-card-content .progress-bar {
+    margin-bottom: 1.5rem;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOO - Tu Espacio de Bienestar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">OOO</div>
+        <nav class="main-nav">
+            <a href="agenda.html">Agenda</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="tienda.html">Tienda</a>
+        </nav>
+        <div class="user-area">
+            <span class="user-points">1,250 Puntos</span>
+            <div class="user-profile" id="user-menu-button">
+                <span>Ana García ▼</span>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="mi-espacio.html">Mi Espacio OOO</a>
+                    <a href="#">Mi Perfil</a>
+                    <a href="cursos.html">Mis Cursos</a>
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Bienvenida, Ana</h1>
+            <p>Descubre, participa y cuídate. Tu bienestar es nuestra prioridad.</p>
+        </section>
+
+        <div class="home-grid">
+            
+            <article class="card">
+                <h2><i class="fa-solid fa-calendar-days"></i> Próximos Eventos</h2>
+
+                <div class="mini-calendar">
+                    <div class="calendar-header">
+                        Junio 2025
+                    </div>
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>L</th><th>M</th><th>X</th><th>J</th><th>V</th><th>S</th><th>D</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="other-month">26</td><td class="other-month">27</td><td class="other-month">28</td><td class="other-month">29</td><td class="other-month">30</td><td class="other-month">31</td><td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td>
+                            </tr>
+                            <tr>
+                                <td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+                            </tr>
+                            <tr>
+                                <td>16</td><td>17</td><td>18</td><td class="today">19</td><td>20</td><td>21</td><td>22</td>
+                            </tr>
+                            <tr>
+                                <td>23</td><td>24</td><td>25</td><td>26</td><td class="has-event">27</td><td>28</td><td>29</td>
+                            </tr>
+                            <tr>
+                                <td>30</td><td class="other-month">1</td><td class="other-month">2</td><td class="other-month">3</td><td class="other-month">4</td><td class="other-month">5</td><td class="other-month">6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <ul class="event-list">
+                    <li>
+                        <div class="event-info">
+                            <span class="event-title">Webinar: Nutrición y Energía</span>
+                            <span class="event-date">27 de Junio, 2025 - 11:00h</span>
+                        </div>
+                        <a href="#" class="btn-event">Apuntarme</a>
+                    </li>
+                    <li>
+                        <div class="event-info">
+                            <span class="event-title">Taller de Mindfulness</span>
+                            <span class="event-date">15 de Julio, 2025 - 16:00h</span>
+                        </div>
+                        <a href="#" class="btn-event">Apuntarme</a>
+                    </li>
+                </ul>
+                <div class="card-footer">
+                    <a href="agenda.html" class="see-more">Ver toda la agenda →</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2><i class="fa-solid fa-graduation-cap"></i> Cursos Destacados</h2>
+                <ul class="course-list">
+                    <li>
+                        <div class="course-info">
+                            <span class="course-title">Gestión del Estrés</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="course-info">
+                            <span class="course-title">Primeros Auxilios Básicos</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 20%;"></div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="card-footer">
+                    <a href="cursos.html" class="see-more">Explorar todos los cursos →</a>
+                </div>
+            </article>
+
+            <article class="card">
+                <h2><i class="fa-solid fa-users"></i> Último en la Comunidad</h2>
+                <ul class="community-list">
+                    <li>Recomendación (Libro): "El Hombre en Busca de Sentido" por Juan P. <i class="fa-solid fa-heart"></i> 12</li>
+                    <li>Logro: ¡Maratón de Bilbao completada por el equipo de IT! <i class="fa-solid fa-heart"></i> 45</li>
+                    <li>Recomendación (Podcast): "Entiende tu Mente" por Lucía M. <i class="fa-solid fa-heart"></i> 21</li>
+                </ul>
+                <div class="card-footer">
+                    <a href="comunidad.html" class="see-more">Ir a la comunidad →</a>
+                </div>
+            </article>
+
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

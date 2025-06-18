@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - OOO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">OOO</a></div>
+        <nav class="main-nav">
+            <a href="agenda.html">Agenda</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="tienda.html" class="active">Tienda</a>
+        </nav>
+        <div class="user-area">
+            <span class="user-points">1,250 Puntos</span>
+            <div class="user-profile" id="user-menu-button">
+                <span>Ana García ▼</span>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="mi-espacio.html">Mi Espacio OOO</a>
+                    <a href="#">Mi Perfil</a>
+                    <a href="cursos.html">Mis Cursos</a>
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Tienda de Recompensas OOO</h1>
+            <p>Usa tus puntos OOO para canjear premios exclusivos. ¡Tu esfuerzo tiene recompensa!</p>
+        </div>
+
+        <div class="product-grid">
+            <article class="product-card">
+                <div class="product-image"><i class="fa-solid fa-mug-hot"></i></div>
+                <h3>Taza Corporativa OOO</h3>
+                <div class="product-price">500 Puntos</div>
+                <a href="#" class="btn-redeem">Canjear</a>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image"><i class="fa-solid fa-bottle-water"></i></div>
+                <h3>Botella de Agua Reutilizable</h3>
+                <div class="product-price">750 Puntos</div>
+                <a href="#" class="btn-redeem">Canjear</a>
+            </article>
+
+            <article class="product-card">
+                 <div class="product-image"><i class="fa-solid fa-gift"></i></div>
+                <h3>Caja de Snacks Saludables</h3>
+                <div class="product-price">1,200 Puntos</div>
+                <a href="#" class="btn-redeem">Canjear</a>
+            </article>
+
+            <article class="product-card">
+                 <div class="product-image"><i class="fa-solid fa-ticket"></i></div>
+                <h3>Vale para un Masaje Deportivo</h3>
+                <div class="product-price">2,500 Puntos</div>
+                <a href="#" class="btn-redeem" disabled>Puntos insuficientes</a>
+            </article>
+
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

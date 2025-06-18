@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos - OOO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">OOO</a></div>
+        <nav class="main-nav">
+            <a href="agenda.html">Agenda</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="tienda.html">Tienda</a>
+        </nav>
+        <div class="user-area">
+            <span class="user-points">1,250 Puntos</span>
+            <div class="user-profile" id="user-menu-button">
+                <span>Ana García ▼</span>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="mi-espacio.html">Mi Espacio OOO</a>
+                    <a href="#">Mi Perfil</a>
+                    <a href="cursos.html">Mis Cursos</a>
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Catálogo de Cursos OOO</h1>
+            <p>Fórmate a tu ritmo y gana puntos. El conocimiento también es bienestar.</p>
+        </div>
+
+        <div class="course-grid">
+            <article class="course-card">
+                <div class="course-card-image"><i class="fa-solid fa-brain"></i></div>
+                <div class="course-card-content">
+                    <span class="course-card-category">Bienestar Emocional</span>
+                    <h3>Gestión del Estrés</h3>
+                    <p>Técnicas y herramientas para manejar la presión diaria y mejorar tu equilibrio emocional.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 75%;"></div>
+                    </div>
+                    <a href="#" class="btn-action">Continuar Curso</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-card-image"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div class="course-card-content">
+                    <span class="course-card-category">Salud Física</span>
+                    <h3>Primeros Auxilios Básicos</h3>
+                    <p>Aprende a actuar en situaciones de emergencia. Un conocimiento que puede salvar vidas.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 20%;"></div>
+                    </div>
+                    <a href="#" class="btn-action">Continuar Curso</a>
+                </div>
+            </article>
+
+            <article class="course-card">
+                <div class="course-card-image"><i class="fa-solid fa-apple-whole"></i></div>
+                <div class="course-card-content">
+                    <span class="course-card-category">Nutrición</span>
+                    <h3>Planificación de Menús Saludables</h3>
+                    <p>Descubre cómo organizar tus comidas semanales de forma equilibrada, fácil y deliciosa.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%;"></div>
+                    </div>
+                    <a href="#" class="btn-action">Empezar Curso</a>
+                </div>
+            </article>
+            
+            <article class="course-card">
+                <div class="course-card-image"><i class="fa-solid fa-people-group"></i></div>
+                <div class="course-card-content">
+                    <span class="course-card-category">Desarrollo Profesional</span>
+                    <h3>Comunicación Efectiva</h3>
+                    <p>Mejora tus habilidades para expresarte con claridad y asertividad en el entorno laboral.</p>
+                     <div class="progress-bar">
+                        <div class="progress" style="width: 100%;"></div>
+                    </div>
+                    <a href="#" class="btn-action" disabled>Curso Finalizado</a>
+                </div>
+            </article>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

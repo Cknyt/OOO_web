@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Espacio - OOO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">OOO</a></div>
+        <nav class="main-nav">
+            <a href="agenda.html">Agenda</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="tienda.html">Tienda</a>
+        </nav>
+        <div class="user-area">
+            <span class="user-points">1,250 Puntos</span>
+            <div class="user-profile" id="user-menu-button">
+                <span>Ana García ▼</span>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="mi-espacio.html">Mi Espacio OOO</a>
+                    <a href="#">Mi Perfil</a>
+                    <a href="cursos.html">Mis Cursos</a>
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="dashboard-header">
+            <div class="points-card">
+                <span class="points-value">1,250</span>
+                <span class="points-label">Capital OOO (Total)</span>
+            </div>
+            <div class="points-card">
+                <span class="points-value">133</span>
+                <span class="points-label">Puntos de este mes</span>
+            </div>
+        </div>
+
+        <div class="dashboard-content">
+            <section class="card">
+                <h2><i class="fa-solid fa-list-check"></i> Mi Actividad Reciente</h2>
+                <table class="activity-table">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Concepto</th>
+                            <th>Puntos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>15 Junio, 2025</td>
+                            <td>Curso completado: "Gestión del Estrés"</td>
+                            <td class="points-positive">+15</td>
+                        </tr>
+                        <tr>
+                            <td>12 Junio, 2025</td>
+                            <td>Asistencia a webinar: "Nutrición y Energía"</td>
+                            <td class="points-positive">+10</td>
+                        </tr>
+                        <tr>
+                            <td>10 Junio, 2025</td>
+                            <td>Recomendación de libro: "El poder del ahora"</td>
+                            <td class="points-positive">+8</td>
+                        </tr>
+                         <tr>
+                            <td>02 Junio, 2025</td>
+                            <td>Canje en tienda: Taza OOO</td>
+                            <td class="points-negative">-500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <section class="card">
+                <h2><i class="fa-solid fa-person-running"></i> Realizar una Aportación</h2>
+                <p>Gana puntos compartiendo con la comunidad o registrando tu actividad física.</p>
+                <div class="action-buttons">
+                    <a href="#" class="btn-action">Subir Recomendación</a>
+                    <a href="#" class="btn-action">Registrar Rutina de Salud</a>
+                    <a href="#" class="btn-action">Añadir Prueba Deportiva</a>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunidad - OOO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">OOO</a></div>
+        <nav class="main-nav">
+            <a href="agenda.html">Agenda</a>
+            <a href="comunidad.html" class="active">Comunidad</a>
+            <a href="tienda.html">Tienda</a>
+        </nav>
+        <div class="user-area">
+            <span class="user-points">1,250 Puntos</span>
+            <div class="user-profile" id="user-menu-button">
+                <span>Ana García ▼</span>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="mi-espacio.html">Mi Espacio OOO</a>
+                    <a href="#">Mi Perfil</a>
+                    <a href="cursos.html">Mis Cursos</a>
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Comunidad OOO</h1>
+            <p>El espacio para compartir, descubrir y motivarse juntos.</p>
+        </div>
+
+        <div class="tab-nav">
+            <button class="tab-btn active" data-tab="recomendaciones">Recomendaciones</button>
+            <button class="tab-btn" data-tab="logros">Logros Deportivos</button>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-panel active" id="recomendaciones">
+                <div class="recommendation-grid">
+                    <article class="recommendation-card">
+                        <div class="rec-icon"><i class="fa-solid fa-book-open"></i></div>
+                        <h3>El Hombre en Busca de Sentido</h3>
+                        <p class="rec-author">Libro de Viktor Frankl</p>
+                        <p class="rec-comment">"Un libro que te cambia la perspectiva sobre la vida y la resiliencia."</p>
+                        <div class="rec-footer">
+                            <span>Recomendado por Juan P.</span>
+                            <span class="rec-likes"><i class="fa-solid fa-heart"></i> 12</span>
+                        </div>
+                    </article>
+                    <article class="recommendation-card">
+                        <div class="rec-icon"><i class="fa-solid fa-podcast"></i></div>
+                        <h3>Entiende Tu Mente</h3>
+                        <p class="rec-author">Podcast de Psicología</p>
+                        <p class="rec-comment">"Episodios cortos y muy útiles para entender cómo funcionamos. ¡Engancha!"</p>
+                        <div class="rec-footer">
+                            <span>Recomendado por Lucía M.</span>
+                            <span class="rec-likes"><i class="fa-solid fa-heart"></i> 21</span>
+                        </div>
+                    </article>
+                    <article class="recommendation-card">
+                        <div class="rec-icon"><i class="fa-solid fa-film"></i></div>
+                        <h3>Intocable (Intouchables)</h3>
+                        <p class="rec-author">Película francesa</p>
+                        <p class="rec-comment">"Una historia increíble de amistad que te hace reír y llorar. Imprescindible."</p>
+                        <div class="rec-footer">
+                            <span>Recomendado por Sara G.</span>
+                            <span class="rec-likes"><i class="fa-solid fa-heart"></i> 35</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div class="tab-panel" id="logros">
+                <div class="achievement-grid">
+                    <article class="achievement-card">
+                        <div class="achievement-image">
+                            <i class="fa-solid fa-person-running"></i>
+                        </div>
+                        <h3>Maratón de Bilbao</h3>
+                        <p class="ach-user">Completada por el equipo de IT</p>
+                        <p class="ach-comment">"¡Reto superado! Sufrimos pero lo conseguimos juntos. ¡Gran experiencia!"</p>
+                    </article>
+                    <article class="achievement-card">
+                        <div class="achievement-image">
+                            <i class="fa-solid fa-person-biking"></i>
+                        </div>
+                        <h3>Ruta Ciclista a Urkiola</h3>
+                        <p class="ach-user">Logro de Maite R.</p>
+                        <p class="ach-comment">"Precioso pero duro ascenso al puerto de Urkiola este fin de semana."</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

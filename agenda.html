@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda - OOO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">OOO</a></div>
+        <nav class="main-nav">
+            <a href="agenda.html" class="active">Agenda</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="tienda.html">Tienda</a>
+        </nav>
+        <div class="user-area">
+            <span class="user-points">1,250 Puntos</span>
+            <div class="user-profile" id="user-menu-button">
+                <span>Ana García ▼</span>
+                <div class="dropdown-menu" id="dropdown-menu">
+                    <a href="mi-espacio.html">Mi Espacio OOO</a>
+                    <a href="#">Mi Perfil</a>
+                    <a href="cursos.html">Mis Cursos</a>
+                    <a href="#">Cerrar Sesión</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="page-header">
+            <h1>Agenda de Eventos OOO</h1>
+            <p>Aquí encontrarás todos nuestros webinars, talleres y actividades. ¡Participa!</p>
+        </div>
+
+        <div class="event-list-container">
+            <article class="event-card">
+                <div class="event-date-box">
+                    <span class="day">15</span>
+                    <span class="month">JUL</span>
+                </div>
+                <div class="event-details">
+                    <span class="event-category category-taller">Taller</span>
+                    <h2>Taller Práctico de Mindfulness</h2>
+                    <p class="event-meta">
+                        <i class="fa-solid fa-clock"></i> 16:00h - 17:30h | <i class="fa-solid fa-user-tie"></i> Ponente: Elena Herrero
+                    </p>
+                    <p class="event-description">
+                        Aprende técnicas prácticas para reducir el estrés y mejorar tu concentración en el día a día.
+                    </p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn-action">Apuntarme</a>
+                </div>
+            </article>
+
+            <article class="event-card">
+                 <div class="event-date-box">
+                    <span class="day">25</span>
+                    <span class="month">JUN</span>
+                </div>
+                <div class="event-details">
+                    <span class="event-category category-webinar">Webinar</span>
+                    <h2>Webinar: Nutrición y Energía</h2>
+                    <p class="event-meta">
+                        <i class="fa-solid fa-clock"></i> 11:00h - 12:00h | <i class="fa-solid fa-user-tie"></i> Ponente: Carlos Solís
+                    </p>
+                    <p class="event-description">
+                        Descubre cómo tu alimentación impacta directamente en tu rendimiento y vitalidad.
+                    </p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn-action">Apuntarme</a>
+                </div>
+            </article>
+
+             <article class="event-card event-past">
+                 <div class="event-date-box">
+                    <span class="day">10</span>
+                    <span class="month">MAY</span>
+                </div>
+                <div class="event-details">
+                    <span class="event-category category-webinar">Webinar</span>
+                    <h2>Webinar: Ergonomía en el Puesto de Trabajo</h2>
+                    <p class="event-meta">
+                        <i class="fa-solid fa-clock"></i> 10:00h - 11:00h | <i class="fa-solid fa-user-tie"></i> Ponente: Sofía Ramos
+                    </p>
+                    <p class="event-description">
+                        Evento finalizado. Aprende a configurar tu espacio de trabajo para evitar dolores y lesiones.
+                    </p>
+                </div>
+                <div class="event-action">
+                    <a href="#" class="btn-action" disabled>Ver grabación</a>
+                </div>
+            </article>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
